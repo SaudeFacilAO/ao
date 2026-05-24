@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Fácil - Políticas de Privacidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+</head>
+<body>
+<div class="consent-container">
+    <div class="consent-header">
+        <div class="logo"><i class="fas fa-heartbeat"></i><span>Saúde Fácil</span></div>
+        <h1>Consentimento e Privacidade</h1>
+        <p>Leia com atenção e autorize a criação da sua conta.</p>
+    </div>
+    <div class="consent-card">
+        <div class="terms-content">
+            <!-- Termo 1: Termos de Uso -->
+            <div class="term-group" data-term="termos_uso">
+                <div class="term-header">
+                    <div class="term-title"><div class="term-icon"><i class="fas fa-file-contract"></i></div><div><h3>Termos de Uso</h3><div class="term-desc">Regras gerais da plataforma Saúde Fácil</div></div></div>
+                    <div style="display: flex; gap: 8px;"><button class="view-term-btn" data-term-id="termos_uso"><i class="fas fa-eye"></i> Ler completo</button><label class="custom-checkbox"><input type="checkbox" class="term-checkbox" data-term="termos_uso"><span class="checkmark"></span><span class="checkbox-label">Aceito</span></label></div>
+                </div>
+                <div class="expandable-text" id="expand-termos_uso"><strong>Termos de Uso – Saúde Fácil</strong><br>Ao utilizar os serviços, você concorda em fornecer informações verdadeiras, respeitar a privacidade e não praticar atos ilícitos. A plataforma pode suspender contas que violem as regras.</div>
+            </div>
+            <!-- Termo 2: Política de Privacidade -->
+            <div class="term-group" data-term="privacidade">
+                <div class="term-header">
+                    <div class="term-title"><div class="term-icon"><i class="fas fa-lock"></i></div><div><h3>Política de Privacidade</h3><div class="term-desc">Como coletamos, usamos e protegemos seus dados</div></div></div>
+                    <div style="display: flex; gap: 8px;"><button class="view-term-btn" data-term-id="privacidade"><i class="fas fa-eye"></i> Ler completo</button><label class="custom-checkbox"><input type="checkbox" class="term-checkbox" data-term="privacidade"><span class="checkmark"></span><span class="checkbox-label">Aceito</span></label></div>
+                </div>
+                <div class="expandable-text" id="expand-privacidade"><strong>Política de Privacidade</strong><br>Seus dados pessoais são usados exclusivamente para agendamentos, receitas e comunicação com profissionais. Nunca compartilhamos com terceiros sem autorização.</div>
+            </div>
+            <!-- Termo 3: LGPD -->
+            <div class="term-group" data-term="lgpd">
+                <div class="term-header">
+                    <div class="term-title"><div class="term-icon"><i class="fas fa-database"></i></div><div><h3>Lei Geral de Proteção de Dados (LGPD)</h3><div class="term-desc">Autorização para tratamento de dados de saúde</div></div></div>
+                    <div style="display: flex; gap: 8px;"><button class="view-term-btn" data-term-id="lgpd"><i class="fas fa-eye"></i> Ler completo</button><label class="custom-checkbox"><input type="checkbox" class="term-checkbox" data-term="lgpd"><span class="checkmark"></span><span class="checkbox-label">Aceito</span></label></div>
+                </div>
+                <div class="expandable-text" id="expand-lgpd"><strong>Consentimento LGPD</strong><br>Autorizo o tratamento dos meus dados de saúde para atendimento, prontuário eletrônico e telemedicina. Posso revogar a qualquer momento.</div>
+            </div>
+            <!-- Termo 4: Comunicações (opcional) -->
+            <div class="term-group" data-term="comunicacao">
+                <div class="term-header">
+                    <div class="term-title"><div class="term-icon"><i class="fas fa-envelope-open-text"></i></div><div><h3>Comunicações e Notificações</h3><div class="term-desc">Receber lembretes, avisos e mensagens do sistema</div></div></div>
+                    <div style="display: flex; gap: 8px;"><button class="view-term-btn" data-term-id="comunicacao"><i class="fas fa-eye"></i> Ler completo</button><label class="custom-checkbox"><input type="checkbox" class="term-checkbox" data-term="comunicacao"><span class="checkmark"></span><span class="checkbox-label">Aceito (Opcional)</span></label></div>
+                </div>
+                <div class="expandable-text" id="expand-comunicacao"><strong>Comunicações</strong><br>Autorizo o envio de e-mails, SMS e notificações sobre consultas, resultados e conteúdos educativos. Posso cancelar nas configurações.</div>
+            </div>
+            <!-- Termo 5: Pesquisa (opcional) -->
+            <div class="term-group" data-term="pesquisa">
+                <div class="term-header">
+                    <div class="term-title"><div class="term-icon"><i class="fas fa-chart-line"></i></div><div><h3>Compartilhamento para Pesquisa (Opcional)</h3><div class="term-desc">Contribuir com estudos anônimos para melhorar a saúde</div></div></div>
+                    <div style="display: flex; gap: 8px;"><button class="view-term-btn" data-term-id="pesquisa"><i class="fas fa-eye"></i> Ler completo</button><label class="custom-checkbox"><input type="checkbox" class="term-checkbox" data-term="pesquisa"><span class="checkmark"></span><span class="checkbox-label">Aceito (Opcional)</span></label></div>
+                </div>
+                <div class="expandable-text" id="expand-pesquisa"><strong>Pesquisa e Inovação</strong><br>Dados anônimos podem ser usados em estudos acadêmicos para melhorias da plataforma. Opção voluntária.</div>
+            </div>
+        </div>
+        <div class="actions">
+            <button class="btn btn-secondary" id="recusarBtn"><i class="fas fa-times"></i> Recusar e Voltar ao Cadastro</button>
+            <button class="btn btn-primary" id="confirmarBtn" disabled><i class="fas fa-check-circle"></i> Confirmar e Criar Conta</button>
+        </div>
+    </div>
+</div>
+<div id="termModal" class="modal"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">Termo</h3><button class="close-modal" id="closeModalBtn">&times;</button></div><div class="modal-body" id="modalBody"></div></div></div>
+<script>
+
+// =====================================================
+// TERMOS COMPLETOS
+// =====================================================
+const fullTerms = {
+
+    termos_uso: `
+    Termos de Uso – Saúde Fácil
+
+    A plataforma oferece agendamento de consultas,
+    telemedicina e prontuário eletrônico.
+
+    O usuário compromete-se a fornecer dados verdadeiros
+    e não compartilhar a senha.
+    `,
+
+    privacidade: `
+    Política de Privacidade
+
+    Coletamos dados pessoais apenas para funcionamento
+    da plataforma Saúde Fácil.
+    `,
+
+    lgpd: `
+    LGPD
+
+    Você autoriza o tratamento dos seus dados
+    de saúde conforme a legislação.
+    `,
+
+    comunicacao: `
+    Comunicações
+
+    Poderá receber notificações e lembretes.
+    `,
+
+    pesquisa: `
+    Pesquisa
+
+    Dados anônimos poderão ser utilizados
+    para estudos científicos.
+    `
+};
+
+// =====================================================
+// TERMOS OBRIGATÓRIOS
+// =====================================================
+const acceptedTerms = new Set();
+
+const requiredTerms = [
+    'termos_uso',
+    'privacidade',
+    'lgpd'
+];
+
+// =====================================================
+// BOTÃO CONFIRMAR
+// =====================================================
+function updateConfirmButton() {
+
+    const allAccepted = requiredTerms.every(
+        term => acceptedTerms.has(term)
+    );
+
+    document.getElementById('confirmarBtn').disabled = !allAccepted;
+}
+
+// =====================================================
+// CHECKBOXES
+// =====================================================
+document.querySelectorAll('.term-checkbox').forEach(cb => {
+
+    cb.addEventListener('change', function () {
+
+        const term = this.dataset.term;
+
+        if (this.checked) {
+            acceptedTerms.add(term);
+        } else {
+            acceptedTerms.delete(term);
+        }
+
+        updateConfirmButton();
+    });
+});
+
+// =====================================================
+// MODAL DOS TERMOS
+// =====================================================
+document.querySelectorAll('.view-term-btn').forEach(btn => {
+
+    btn.addEventListener('click', function () {
+
+        const termId = this.dataset.termId;
+
+        document.getElementById('modalTitle').innerText =
+            termId.toUpperCase();
+
+        document.getElementById('modalBody').innerText =
+            fullTerms[termId] || 'Conteúdo indisponível';
+
+        document.getElementById('termModal').style.display = 'flex';
+    });
+});
+
+// =====================================================
+// FECHAR MODAL
+// =====================================================
+document.getElementById('closeModalBtn').addEventListener('click', () => {
+
+    document.getElementById('termModal').style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+
+    const modal = document.getElementById('termModal');
+
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// =====================================================
+// EXPANDIR TERMOS
+// =====================================================
+document.querySelectorAll('.term-group .term-header').forEach(header => {
+
+    header.addEventListener('click', (e) => {
+
+        if (
+            e.target.closest('.view-term-btn') ||
+            e.target.closest('.custom-checkbox')
+        ) return;
+
+        const content = header
+            .closest('.term-group')
+            .querySelector('.expandable-text');
+
+        content.classList.toggle('open');
+    });
+});
+
+// =====================================================
+// CONFIRMAR E CRIAR CONTA
+// =====================================================
+document.getElementById('confirmarBtn').addEventListener('click', async () => {
+
+    try {
+
+        // =========================================
+        // RECUPERAR DADOS TEMPORÁRIOS
+        // =========================================
+        const dadosTemp = sessionStorage.getItem('cadastroTemp');
+
+        if (!dadosTemp) {
+
+            alert('Sessão expirada. Faça o cadastro novamente.');
+
+            window.location.href = 'cadastro.html';
+
+            return;
+        }
+
+        // =========================================
+        // CONVERTER PARA OBJETO
+        // =========================================
+        const dados = JSON.parse(dadosTemp);
+
+        // =========================================
+        // ADICIONAR TERMOS ACEITES
+        // =========================================
+        dados.termosAceites = Array.from(acceptedTerms);
+
+        // =========================================
+        // ENVIAR PARA O BACKEND PHP
+        // =========================================
+        const resposta = await fetch(
+            'phpconexao/cadastro_paciente.php',
+            {
+                method: 'POST',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify(dados)
+            }
+        );
+
+        // =========================================
+        // RECEBER RESPOSTA
+        // =========================================
+        const resultado = await resposta.json();
+
+        console.log(resultado);
+
+        // =========================================
+        // SUCESSO
+        // =========================================
+        if (resultado.status === 'success') {
+
+            // Limpar dados temporários
+            sessionStorage.removeItem('cadastroTemp');
+
+            // Toast
+            const toast = document.createElement('div');
+
+            toast.className = 'toast-message';
+
+            toast.innerText =
+                'Conta criada com sucesso!';
+
+            document.body.appendChild(toast);
+
+            // Redirecionar
+            setTimeout(() => {
+
+                window.location.href = 'paciente.html';
+
+            }, 2000);
+
+        }
+
+        // =========================================
+        // ERRO DO SERVIDOR
+        // =========================================
+        else {
+
+            alert(resultado.msg || 'Erro ao criar conta.');
+        }
+
+    }
+
+    // =============================================
+    // ERRO GERAL
+    // =============================================
+    catch (erro) {
+
+        console.error(erro);
+
+        alert('Erro ao conectar com o servidor.');
+    }
+});
+
+// =====================================================
+// RECUSAR
+// =====================================================
+document.getElementById('recusarBtn').addEventListener('click', () => {
+
+    sessionStorage.removeItem('cadastroTemp');
+
+    window.location.href = 'cadastro.html';
+});
+
+// =====================================================
+// INICIAR
+// =====================================================
+updateConfirmButton();
+
+</script>
+</body>
+</html>

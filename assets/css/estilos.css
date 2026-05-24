@@ -1,0 +1,98 @@
+/* SECTION */
+.hospitais {
+  
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* CARROSSEL */
+  .carousel {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* SLIDES */
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* TEXTO */
+  .text {
+    flex: 1;
+  }
+  
+  .text h2 {
+    color: #0b3d91;
+  }
+  
+  .text p {
+    color: #333;
+  }
+  
+  /* IMAGEM */
+  .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  
+  /* BOTÕES */
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0b3d91;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+  
+  .prev {
+    left: -20px;
+  }
+  
+  .next {
+    right: -20px;
+  }
+  
+  button:hover {
+    background: #062a66;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .slide {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  
+  
+  

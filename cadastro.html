@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Saúde Fácil - Cadastro de Utente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/cadastro_paciente.css">
+    <link rel="stylesheet" href="assets/css/politicas.css">
+    
+</head>
+<body>
+<div class="consent-container">
+    <div class="consent-header">
+        <div class="logo"><i class="fas fa-heartbeat"></i><span>Saúde Fácil</span></div>
+        <h1>Criar sua conta</h1>
+        <p>Preencha os seus dados para aceder aos serviços de saúde.</p>
+    </div>
+    <div class="consent-card">
+        <div class="progress-section">
+            <div class="progress-steps">
+                <div class="step active" id="step1Indicator">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Dados Pessoais</span>
+                </div>
+
+                <div class="step-line"></div>
+                <div class="step" id="step2Indicator">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Endereço</span>
+                </div>
+
+                <div class="step-line"></div>
+                <div class="step" id="step3Indicator">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Conta e Segurança</span>
+                </div>
+            </div>
+        </div>
+        <!-- ETAPA 1 -->
+        <div id="step1Content">
+            <div class="form-content">
+                <div class="section-title">
+                    <i class="fas fa-user-circle"></i> Informações pessoais
+                </div>
+
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Nome completo <span class="required">*</span></label>
+                        <input type="text" id="nomeCompleto" placeholder="Ex: Ana Maria Silva">
+                        <div class="error-message" id="errorNome"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Nº de Identificação (BI) <span class="required">*</span></label>
+                        <input type="text" id="bi" placeholder="000000000A0001" maxlength="18">
+                        <div class="error-message" id="errorBi"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Data de nascimento <span class="required">*</span></label>
+                        <input type="date" id="dataNascimento">
+                        <div class="error-message" id="errorData"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Género <span class="required">*</span></label>
+                        <select id="genero">
+                            <option value="">Selecione</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                        <div class="error-message" id="errorGenero"></div>
+                    </div>
+
+                    
+
+                    <div class="input-group" id="emailGroup">
+    <label>E-mail (opcional)</label>
+
+    <input 
+        type="email" 
+        id="email" 
+        placeholder="seu@email.com"
+    >
+
+    <div class="error-message" id="errorEmail"></div>
+</div>
+
+<div class="input-group" id="telefoneGroup">
+
+    <label>
+        Telefone 
+        <span class="required">*</span>
+    </label>
+
+    <input 
+        type="tel" 
+        id="telefone" 
+        placeholder="923 456 789"
+    >
+
+    <div class="error-message" id="errorTelefone"></div>
+
+</div>
+                </div>
+            </div>
+            <div class="actions"><button class="btn btn-secondary" id="cancelCadastroBtn"><i class="fas fa-times"></i> Cancelar</button><button class="btn btn-primary" id="nextStep1Btn">Continuar <i class="fas fa-arrow-right"></i></button></div>
+        </div>
+
+        <!-- ETAPA 2 -->
+        <div id="step2Content" style="display: none;">
+            <div class="form-content">
+                <div class="section-title"><i class="fas fa-map-marker-alt"></i> Morada</div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Província <span class="required">*</span></label>
+                        <input type="text" id="provincia" value="Luanda" readonly>
+                        
+                        <div class="error-message" id="errorProvincia"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Município</label>
+                        <div class="input-group">
+    <select id="municipio">
+        <option value="">Selecione o município</option>
+        <option value="Luanda">Luanda</option>
+        <option value="Belas">Belas</option>
+        <option value="Cacuaco">Cacuaco</option>
+        <option value="Cazenga">Cazenga</option>
+        <option value="Icolo e Bengo">Icolo e Bengo</option>
+        <option value="Kilamba Kiaxi">Kilamba Kiaxi</option>
+        <option value="Quilamba Quiaxi">Quilamba Kiaxi</option>
+        <option value="Maianga">Maianga</option>
+        <option value="Rangel">Rangel</option>
+        <option value="Sambizanga">Sambizanga</option>
+        <option value="Talatona">Talatona</option>
+        <option value="Viana">Viana</option>
+    </select>
+    <div class="error-message" id="errorMunicipio"></div>
+</div>
+                        <div class="error-message" id="errorMunicipio"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Rua / Bairro <span class="required">*</span></label>
+                        <input type="text" id="rua" placeholder="Ex: Avenida 4 de Fevereiro, Bairro Popular">
+                        <div class="error-message" id="errorRua"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn btn-secondary" id="backStep2Btn">
+                    <i class="fas fa-arrow-left"></i> 
+                    Voltar
+                </button>
+                <button class="btn btn-primary" id="nextStep2Btn">
+                    Continuar 
+                    <i class="fas fa-arrow-right"></i>
+                </button></div>
+        </div>
+
+        <!-- ETAPA 3 - SEM CAMPO USUÁRIO, COM VALIDAÇÃO DE SENHA (SEM SEQUÊNCIA NUMÉRICA) -->
+        <div id="step3Content" style="display: none;">
+            <div class="form-content">
+                <div class="section-title">
+                    <i class="fas fa-laptop">
+                    </i> Defina a sua senha</div>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label>Senha <span class="required">*</span></label>
+                        <input type="password" id="senha" placeholder="mínimo 6 caracteres">
+                        <div class="error-message" id="errorSenha"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirmar senha <span class="required">*</span></label>
+                        <input type="password" id="confirmarSenha" placeholder="digite a senha novamente">
+                        <div class="error-message" id="errorConfirmar"></div>
+                    </div>
+
+                </div>
+
+                <div class="input-group" style="margin-top: 8px; background: #f8fafd; border-radius: 16px; padding: 12px;">
+                    <i class="fas fa-info-circle" style="color:#1977cc; margin-right: 8px;"></i>
+                    <small>A senha deve ter pelo menos 6 caracteres, pode conter letras e números, mas 
+                        <strong>não pode ser uma sequência numérica</strong> 
+                        (ex: 123456, 111111, 987654).
+                    </small>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="btn btn-secondary" id="backStep3Btn">
+                    <i class="fas fa-arrow-left"></i> 
+                    Voltar
+                </button>
+                <button class="btn btn-primary" id="nextStep3Btn" disabled>
+                 Prosseguir para Políticas
+                 <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- ===================================================== -->
+<!-- ETAPA 4 - CONSENTIMENTO E PRIVACIDADE -->
+<!-- ===================================================== -->
+<div id="step4Content" style="display:none;">
+
+    <div class="form-content">
+
+        <div class="section-title">
+            <i class="fas fa-shield-alt"></i>
+            Consentimento e Privacidade
+        </div>
+
+        <div class="terms-content">
+
+            <!-- ========================================= -->
+            <!-- TERMOS DE USO -->
+            <!-- ========================================= -->
+            <div class="term-group" data-term="termos_uso">
+
+                <div class="term-header">
+
+                    <div class="term-title">
+
+                        <div class="term-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+
+                        <div>
+                            <h3>Termos de Uso</h3>
+
+                            <div class="term-desc">
+                                Regras gerais da plataforma Saúde Fácil
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div style="display:flex; gap:8px;">
+
+                        <button
+                            type="button"
+                            class="view-term-btn"
+                            data-term-id="termos_uso">
+
+                            <i class="fas fa-eye"></i>
+                            Ler completo
+
+                        </button>
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                class="term-checkbox"
+                                data-term="termos_uso">
+
+                            <span class="checkmark"></span>
+
+                            <span class="checkbox-label">
+                                Aceito
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="expandable-text"
+                    id="expand-termos_uso">
+
+                    <strong>
+                        Termos de Uso – Saúde Fácil
+                    </strong>
+
+                    <br><br>
+
+                    Ao utilizar os serviços da plataforma,
+                    você concorda em fornecer informações
+                    verdadeiras, respeitar a privacidade
+                    dos utilizadores e não praticar
+                    atos ilícitos.
+
+                    A plataforma poderá suspender contas
+                    que violem os termos estabelecidos.
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- PRIVACIDADE -->
+            <!-- ========================================= -->
+            <div class="term-group" data-term="privacidade">
+
+                <div class="term-header">
+
+                    <div class="term-title">
+
+                        <div class="term-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>Política de Privacidade</h3>
+
+                            <div class="term-desc">
+                                Como coletamos e protegemos os seus dados
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="display:flex; gap:8px;">
+
+                        <button
+                            type="button"
+                            class="view-term-btn"
+                            data-term-id="privacidade">
+
+                            <i class="fas fa-eye"></i>
+                            Ler completo
+
+                        </button>
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                class="term-checkbox"
+                                data-term="privacidade">
+
+                            <span class="checkmark"></span>
+
+                            <span class="checkbox-label">
+                                Aceito
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="expandable-text"
+                    id="expand-privacidade">
+
+                    <strong>
+                        Política de Privacidade
+                    </strong>
+
+                    <br><br>
+
+                    Os seus dados pessoais serão utilizados
+                    exclusivamente para funcionamento
+                    da plataforma Saúde Fácil.
+
+                    Nunca compartilhamos os seus dados
+                    sem autorização.
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- LGPD -->
+            <!-- ========================================= -->
+            <div class="term-group" data-term="lgpd">
+
+                <div class="term-header">
+
+                    <div class="term-title">
+
+                        <div class="term-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Lei Geral de Proteção de Dados
+                            </h3>
+
+                            <div class="term-desc">
+                                Tratamento de dados de saúde
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="display:flex; gap:8px;">
+
+                        <button
+                            type="button"
+                            class="view-term-btn"
+                            data-term-id="lgpd">
+
+                            <i class="fas fa-eye"></i>
+                            Ler completo
+
+                        </button>
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                class="term-checkbox"
+                                data-term="lgpd">
+
+                            <span class="checkmark"></span>
+
+                            <span class="checkbox-label">
+                                Aceito
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="expandable-text"
+                    id="expand-lgpd">
+
+                    <strong>
+                        Consentimento LGPD
+                    </strong>
+
+                    <br><br>
+
+                    Você autoriza o tratamento dos seus
+                    dados médicos para consultas,
+                    telemedicina e prontuário eletrônico.
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- COMUNICAÇÕES -->
+            <!-- ========================================= -->
+            <div class="term-group" data-term="comunicacao">
+
+                <div class="term-header">
+
+                    <div class="term-title">
+
+                        <div class="term-icon">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Comunicações e Notificações
+                            </h3>
+
+                            <div class="term-desc">
+                                Receber lembretes e avisos
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="display:flex; gap:8px;">
+
+                        <button
+                            type="button"
+                            class="view-term-btn"
+                            data-term-id="comunicacao">
+
+                            <i class="fas fa-eye"></i>
+                            Ler completo
+
+                        </button>
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                class="term-checkbox"
+                                data-term="comunicacao">
+
+                            <span class="checkmark"></span>
+
+                            <span class="checkbox-label">
+                                Aceito (Opcional)
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="expandable-text"
+                    id="expand-comunicacao">
+
+                    <strong>
+                        Comunicações
+                    </strong>
+
+                    <br><br>
+
+                    Você poderá receber notificações,
+                    lembretes de consultas e mensagens
+                    importantes da plataforma.
+
+                </div>
+
+            </div>
+
+            <!-- ========================================= -->
+            <!-- PESQUISA -->
+            <!-- ========================================= -->
+            <div class="term-group" data-term="pesquisa">
+
+                <div class="term-header">
+
+                    <div class="term-title">
+
+                        <div class="term-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Compartilhamento para Pesquisa
+                            </h3>
+
+                            <div class="term-desc">
+                                Uso anônimo de dados
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div style="display:flex; gap:8px;">
+
+                        <button
+                            type="button"
+                            class="view-term-btn"
+                            data-term-id="pesquisa">
+
+                            <i class="fas fa-eye"></i>
+                            Ler completo
+
+                        </button>
+
+                        <label class="custom-checkbox">
+
+                            <input
+                                type="checkbox"
+                                class="term-checkbox"
+                                data-term="pesquisa">
+
+                            <span class="checkmark"></span>
+
+                            <span class="checkbox-label">
+                                Aceito (Opcional)
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="expandable-text"
+                    id="expand-pesquisa">
+
+                    <strong>
+                        Pesquisa e Inovação
+                    </strong>
+
+                    <br><br>
+
+                    Dados anônimos poderão ser usados
+                    em estudos científicos e melhorias
+                    da plataforma.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- BOTÕES -->
+    <!-- ========================================= -->
+    <div class="actions">
+
+        <button
+            class="btn btn-secondary"
+            id="backStep4Btn">
+
+            <i class="fas fa-arrow-left"></i>
+            Voltar
+
+        </button>
+
+        <button
+            class="btn btn-primary"
+            id="confirmarBtn"
+            disabled>
+
+            <i class="fas fa-check-circle"></i>
+            Confirmar e Criar Conta
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- MODAL -->
+<!-- ===================================================== -->
+<div id="termModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3 id="modalTitle">
+                Termo
+            </h3>
+
+            <button
+                class="close-modal"
+                id="closeModalBtn">
+
+                &times;
+
+            </button>
+
+        </div>
+
+        <div
+            class="modal-body"
+            id="modalBody">
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+    </div>
+</div>
+
+<script src="assets/js/cadastro_paciente.js"></script>
+</body>
+</html>
